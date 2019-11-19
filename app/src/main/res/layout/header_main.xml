@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_header"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/semi_black"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/nav_header_imageView"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/logo_smol" />
+
+
+
+</RelativeLayout>
