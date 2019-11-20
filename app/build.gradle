@@ -49,4 +49,10 @@ dependencies {
 
     // Rounded Image
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Circle Image
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    // Carousel
+    implementation 'com.synnapps:carouselview:0.1.5'
 }

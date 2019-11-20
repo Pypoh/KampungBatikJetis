@@ -16,13 +16,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.kampungbatikjetis.Model.ProsesPembuatanModel;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private HomeFragment homeFragment = new HomeFragment();
-    private SejarahFragment sejarahFragment = new SejarahFragment();
-    private LayananFragment layananFragment = new LayananFragment();
+    public HomeFragment homeFragment = new HomeFragment();
+    public SejarahFragment sejarahFragment = new SejarahFragment();
+    public LayananFragment layananFragment = new LayananFragment();
+    public ProductFragment productFragment = new ProductFragment();
+    public KontakFragment kontakFragment = new KontakFragment();
+
+    public InfoFragment infoFragment = new InfoFragment();
+    public ProsesPembuatanFragment prosesPembuatanFragment = new ProsesPembuatanFragment();
+    public EventFragment eventFragment = new EventFragment();
+    public PenghargaanFragment penghargaanFragment = new PenghargaanFragment();
+
 
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerMain;
@@ -54,13 +63,21 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.home:
                         setFragment(homeFragment);
-
                         break;
                     case R.id.sejarah:
                         setFragment(sejarahFragment);
                         break;
                     case R.id.layanan:
                         setFragment(layananFragment);
+                        break;
+                    case R.id.produk:
+                        setFragment(productFragment);
+                        break;
+                    case R.id.info:
+                        setFragment(infoFragment);
+                        break;
+                    case R.id.kontak:
+                        setFragment(kontakFragment);
                         break;
                 }
                 menuItem.setChecked(true);

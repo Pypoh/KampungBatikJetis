@@ -1,36 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group>
-        <item android:id="@+id/home"
+        <item
+            android:id="@+id/home"
+            android:checkable="true"
             android:icon="@drawable/nav_home"
-            android:checkable="true"
             android:title="Home" />
-        <item android:id="@+id/sejarah"
+        <item
+            android:id="@+id/sejarah"
+            android:checkable="true"
             android:icon="@drawable/nav_sejarah"
-            android:checkable="true"
             android:title="Sejarah" />
-        <item android:id="@+id/layanan"
-            android:icon="@drawable/nav_layanan"
+        
+        <item
+            android:id="@+id/layanan"
             android:checkable="true"
+            android:icon="@drawable/nav_layanan"
             android:title="Layanan" />
+
+        <item
+            android:id="@+id/produk"
+            android:checkable="true"
+            android:icon="@drawable/nav_proses"
+            android:title="Produk" />
+        <item
+            android:id="@+id/info"
+            android:checkable="true"
+            android:icon="@drawable/nav_info"
+            android:title="Info" />
+
+        <item
+            android:id="@+id/kontak"
+            android:checkable="true"
+            android:icon="@drawable/nav_kontak"
+            android:title="Kontak" />
     </group>
 
-<!--    <group android:id="@+id/contact_us"-->
-<!--        android:checkableBehavior="single">-->
-<!--        <item android:id="@+id/contact_us_layout"-->
-<!--            android:title="Contact Us"-->
-<!--            android:actionLayout=""/>-->
+    <!--    <group android:id="@+id/contact_us"-->
+    <!--        android:checkableBehavior="single">-->
+    <!--        <item android:id="@+id/contact_us_layout"-->
+    <!--            android:title="Contact Us"-->
+    <!--            android:actionLayout=""/>-->
 
-<!--    </group>-->
+    <!--    </group>-->
 
-<!--    <item android:title="Title 1">-->
-<!--        <menu>-->
-<!--            <item android:id="@+id/nav_item_six"-->
-<!--                android:icon="@drawable/ic_drafts_black_24dp"-->
-<!--                android:title="Item 6" />-->
-<!--            <item android:id="@+id/nav_item_seven"-->
-<!--                android:icon="@drawable/ic_drafts_black_24dp"-->
-<!--                android:title="Item 7" />-->
-<!--        </menu>-->
-<!--    </item>-->
+    <!--    <item android:title="Title 1">-->
+    <!--        <menu>-->
+    <!--            <item android:id="@+id/nav_item_six"-->
+    <!--                android:icon="@drawable/nav_layanan"-->
+    <!--                android:title="Item 6" />-->
+    <!--            <item android:id="@+id/nav_item_seven"-->
+    <!--                android:icon="@drawable/nav_layanan"-->
+    <!--                android:title="Item 7" />-->
+    <!--        </menu>-->
+    <!--    </item>-->
 </menu>

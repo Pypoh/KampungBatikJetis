@@ -15,14 +15,37 @@
             android:layout_height="match_parent"
             android:paddingBottom="24dp">
 
+            <TextView
+                android:id="@+id/text_title_selamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:text="Selamat Datang\ndi Kampoeng Batik\nJetis"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/rounded_divider_selamat"
+                android:layout_width="72dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_divider"
+                app:layout_constraintTop_toBottomOf="@id/text_title_selamat"/>
+
             <ImageView
                 android:id="@+id/image_title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="256dp"
                 android:layout_marginTop="24dp"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/rounded_divider_selamat" />
 
             <TextView
                 android:id="@+id/text_title_daya_tarik"
@@ -37,6 +60,16 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/image_title" />
 
+            <View
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/rounded_divider_daya_tarik"
+                android:layout_width="128dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_divider"
+                app:layout_constraintTop_toBottomOf="@id/text_title_daya_tarik"/>
+
             <TextView
                 android:id="@+id/text_description_daya_tarik"
                 android:layout_width="match_parent"
@@ -46,7 +79,7 @@
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/text_title_daya_tarik" />
+                app:layout_constraintTop_toBottomOf="@id/rounded_divider_daya_tarik" />
 
             <TextView
                 android:id="@+id/text_title_fasilitas"

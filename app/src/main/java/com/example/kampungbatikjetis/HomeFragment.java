@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kampungbatikjetis.Adapter.FasilitasAdapter;
@@ -26,6 +27,7 @@ import me.relex.circleindicator.CircleIndicator2;
 
 public class HomeFragment extends Fragment {
 
+    private ImageView imageHomeTitle;
     private TextView _textDayaTarik;
     private RecyclerView recyclerViewFasilitas;
     private FasilitasAdapter fasilitasAdapter;
@@ -48,6 +50,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // View Bind
+        imageHomeTitle = view.findViewById(R.id.image_title);
         _textDayaTarik = view.findViewById(R.id.text_description_daya_tarik);
         recyclerViewFasilitas = view.findViewById(R.id.recycler_fasilitas);
         _textTitleMap = view.findViewById(R.id.text_title_map);
@@ -67,6 +70,8 @@ public class HomeFragment extends Fragment {
         if (fasilitasData.isEmpty()) {
             addFasilitasData();
         }
+
+        imageHomeTitle.setImageResource(R.drawable.home_artwork);
 
         String mapTitle = "Kampoeng Batik Jetis";
         String mapDesc = "Jl. P. Diponegoro, Lemah Putro, Lemahputro, Kec. Sidsoarjo, Kabupaten Sidoarjo, Jawa Timur 61213";

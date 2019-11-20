@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".KontakFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_title_kontak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Kontak"
+                android:textColor="@color/red"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_title_pengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Pengelola"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/text_title_kontak"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_pengelola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_title_pengelola"
+                android:layout_marginTop="16dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/text_title_toko"
+                android:layout_width="match_parent"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Toko dan Usaha"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/recycler_pengelola"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_toko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_title_toko"
+                android:layout_marginTop="16dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

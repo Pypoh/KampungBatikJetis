@@ -78,7 +78,7 @@ public class LayananFragment extends Fragment {
         layananAdapter.setOnItemClickListener(new LayananAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(LayananModel layananModel, View view) {
-                zoomImageFromThumb(view, layananModel.getImageID());
+//                zoomImageFromThumb(view, layananModel.getImageID());
             }
         });
 
