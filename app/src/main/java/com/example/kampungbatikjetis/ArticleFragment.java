@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kampungbatikjetis.Model.ArticleModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
@@ -58,10 +59,19 @@ public class ArticleFragment extends Fragment {
         if (articleModel == null) {
             Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
         } else {
-            articleImage.setImageResource(articleModel.getImageId());
+            try {
+                Picasso.get().load(articleModel.getImageId()).into(articleImage);
+            } catch (Exception e) {
+
+            }
             articleTitle.setText(articleModel.getTitle());
             articleDate.setText(articleModel.getDate());
-            articleDescription.setText(articleModel.getDescription());
+            if(articleModel.getDescription().contains("_n")){
+                String newDescription = articleModel.getDescription().replace("_n","\n");
+                articleDescription.setText(newDescription);
+            } else {
+                articleDescription.setText(articleModel.getDescription());
+            }
             buttonBack.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                 @Override

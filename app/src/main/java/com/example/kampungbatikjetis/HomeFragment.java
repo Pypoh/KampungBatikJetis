@@ -2,9 +2,11 @@ package com.example.kampungbatikjetis;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +24,7 @@ import com.example.kampungbatikjetis.Model.FasilitasModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import me.relex.circleindicator.CircleIndicator2;
 
@@ -58,6 +61,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -90,6 +94,7 @@ public class HomeFragment extends Fragment {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onResume() {
         super.onResume();
@@ -103,10 +108,11 @@ public class HomeFragment extends Fragment {
         fasilitasData.add(new FasilitasModel(R.drawable.home_restoran, "Restoran"));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void setFragment(Fragment fragment) {
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.maps_frame, fragment, "MAIN_FRAGMENT");
-        ft.addToBackStack(null);
+        FragmentTransaction ft = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.maps_frame, fragment);
+//        ft.addToBackStack(null);
         ft.commit();
     }
 }

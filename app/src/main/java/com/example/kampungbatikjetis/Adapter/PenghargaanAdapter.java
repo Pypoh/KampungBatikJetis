@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kampungbatikjetis.Model.PenghargaanModel;
 import com.example.kampungbatikjetis.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,6 +28,14 @@ public class PenghargaanAdapter extends RecyclerView.Adapter<PenghargaanAdapter.
         this.dataset = dataset;
     }
 
+    public List<PenghargaanModel> getDataset() {
+        return dataset;
+    }
+
+    public void setDataset(List<PenghargaanModel> dataset) {
+        this.dataset = dataset;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,7 +47,12 @@ public class PenghargaanAdapter extends RecyclerView.Adapter<PenghargaanAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PenghargaanModel data = dataset.get(position);
         holder.bind(data, onItemClickListener);
-        holder.imagePenghargaan.setImageResource(data.getImageId());
+//        holder.imagePenghargaan.setImageResource(data.getImageId());
+        try {
+            Picasso.get().load(data.getImageId()).into(holder.imagePenghargaan);
+        } catch (Exception e) {
+
+        }
         holder.textTitlePenghargaan.setText(data.getTextTitle());
         holder.textDatePenghargaan.setText(data.getTextDate());
         holder.textDescriptionPenghargaan.setText(data.getTextDescription());

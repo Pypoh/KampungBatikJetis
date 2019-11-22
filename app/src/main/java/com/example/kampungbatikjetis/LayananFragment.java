@@ -229,7 +229,7 @@ public class LayananFragment extends Fragment {
 
     private void addLayananData() {
         layananData.add(new LayananModel(R.drawable.layanan_belajar, "Belajar", "Ingin belajar membatik? Disini juga bisa"));
-        layananData.add(new LayananModel(R.drawable.layanan_beli, "Beli", "Ingin belajar membatik? Disini juga bisa"));
-        layananData.add(new LayananModel(R.drawable.layanan_jahit, "Jahit", "Ingin belajar membatik? Disini juga bisa"));
+        layananData.add(new LayananModel(R.drawable.layanan_beli, "Beli", "Banyak lho varian produk batik yang tersedia disini"));
+        layananData.add(new LayananModel(R.drawable.layanan_jahit, "Jahit", "Mau jahit batik? Kesini aja, banyak ahlinya!"));
     }
 }

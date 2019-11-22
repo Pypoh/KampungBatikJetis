@@ -39,7 +39,11 @@ public class PengelolaAdapter extends RecyclerView.Adapter<PengelolaAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PengelolaModel data = dataset.get(position);
         holder.bind(data, onItemClickListener);
+//        holder.profileImage.setImageResource(data.getImageId());
+        holder.namaPengelola.setText(data.getNama());
+        holder.nomorTelpPengelola.setText(data.getNomor_telp());
     }
+
 
     @Override
     public int getItemCount() {

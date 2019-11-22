@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "304604193951",
+    "firebase_url": "https://kampoengbatikjetis.firebaseio.com",
+    "project_id": "kampoengbatikjetis",
+    "storage_bucket": "kampoengbatikjetis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304604193951:android:0f25b9f50f4d26626feeaa",
+        "android_client_info": {
+          "package_name": "com.example.kampungbatikjetis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304604193951-pb3fnonl1ptrhr0f3ucpckn37r2as8r2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kampungbatikjetis",
+            "certificate_hash": "4f816667fb8b4680f276703cddf1de0e06e91924"
+          }
+        },
+        {
+          "client_id": "304604193951-080oap4mpfjt9rkkmsgf2lshg7s12obr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcQeEyOOivwFJY0khMv21Fo_SgaMzbNwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304604193951-080oap4mpfjt9rkkmsgf2lshg7s12obr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

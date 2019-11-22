@@ -1,6 +1,7 @@
 package com.example.kampungbatikjetis.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kampungbatikjetis.Model.EventModel;
 import com.example.kampungbatikjetis.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -28,6 +30,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         this.dataset = dataset;
     }
 
+    public List<EventModel> getDataset() {
+        return dataset;
+    }
+
+    public void setDataset(List<EventModel> dataset) {
+        this.dataset = dataset;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +49,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         EventModel data = dataset.get(position);
         holder.bind(data, onItemClickListener);
-        holder.imageEvent.setImageResource(data.getImageID());
+        try {
+            Picasso.get().load(data.getImageID()).into(holder.imageEvent);
+        } catch (Exception e) {
+            Log.d("ImageLoadError", "Unable to load image");
+        }
         holder.textTitleEvent.setText(data.getEventTitle());
         holder.textDateEvent.setText(data.getEventDate());
         holder.textDescriptionEvent.setText(data.getEventDescription());

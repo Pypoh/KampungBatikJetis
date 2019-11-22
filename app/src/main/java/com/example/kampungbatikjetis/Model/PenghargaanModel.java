@@ -2,23 +2,26 @@ package com.example.kampungbatikjetis.Model;
 
 public class PenghargaanModel {
 
-    private int imageId;
+    private String imageId;
     private String textTitle;
     private String textDate;
     private String textDescription;
 
-    public PenghargaanModel(int imageId, String textTitle, String textDate, String textDescription) {
+    public PenghargaanModel() {
+    }
+
+    public PenghargaanModel(String imageId, String textTitle, String textDate, String textDescription) {
         this.imageId = imageId;
         this.textTitle = textTitle;
         this.textDate = textDate;
         this.textDescription = textDescription;
     }
 
-    public int getImageId() {
+    public String getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(String imageId) {
         this.imageId = imageId;
     }
 

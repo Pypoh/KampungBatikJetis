@@ -1,12 +1,12 @@
 package com.example.kampungbatikjetis.Model;
 
 public class ArticleModel {
-    private int imageId;
+    private String imageId;
     private String title;
     private String date;
     private String description;
 
-    public ArticleModel(int imageId, String title, String date, String description) {
+    public ArticleModel(String imageId, String title, String date, String description) {
         this.imageId = imageId;
         this.title = title;
         this.date = date;
@@ -17,11 +17,11 @@ public class ArticleModel {
 
     }
 
-    public int getImageId() {
+    public String getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(String imageId) {
         this.imageId = imageId;
     }
 

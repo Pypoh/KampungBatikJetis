@@ -1,6 +1,7 @@
 package com.example.kampungbatikjetis;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.kampungbatikjetis.Model.ProsesPembuatanModel;
@@ -36,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerMain;
     private NavigationView navigationViewMain;
+
+    FragmentTransaction ft;
+
+
+    // Utils
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,22 +70,22 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.home:
-                        setFragment(homeFragment);
+                        setMainFragment(homeFragment);
                         break;
                     case R.id.sejarah:
-                        setFragment(sejarahFragment);
+                        setMainFragment(sejarahFragment);
                         break;
                     case R.id.layanan:
-                        setFragment(layananFragment);
+                        setMainFragment(layananFragment);
                         break;
                     case R.id.produk:
-                        setFragment(productFragment);
+                        setMainFragment(productFragment);
                         break;
                     case R.id.info:
-                        setFragment(infoFragment);
+                        setMainFragment(infoFragment);
                         break;
                     case R.id.kontak:
-                        setFragment(kontakFragment);
+                        setMainFragment(kontakFragment);
                         break;
                 }
                 menuItem.setChecked(true);
@@ -94,26 +102,63 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        if (drawerMain.isDrawerOpen(GravityCompat.START)) {
-            drawerMain.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(drawerToggle.onOptionsItemSelected(item)) {
+        if (drawerToggle.onOptionsItemSelected(item)) {
             Log.d("testingtesting", "ya ");
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void setFragment(Fragment fragment) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+    @Override
+    public void onBackPressed() {
+        if (drawerMain.isDrawerOpen(GravityCompat.START)) {
+            drawerMain.closeDrawer(GravityCompat.START);
+        }
+
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
+        } else if (!doubleBackToExitPressedOnce) {
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Tekan sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
+        } else {
+            finish();
+//            return;
+        }
+    }
+
+    private boolean checkCurrentFragment() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentByTag("MAIN_FRAGMENT");
+        return currentFragment != null && currentFragment.isVisible();
+    }
+
+    public void setMainFragment(Fragment fragment) {
+        ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_frame, fragment, "MAIN_FRAGMENT");
+        Log.d("FragmentAdded", "FragmentMain");
+        doubleBackToExitPressedOnce = false;
+//        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void setFragment(Fragment fragment) {
+        ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_frame, fragment, "MAIN_FRAGMENT");
+        Log.d("FragmentAdded", "Fragment");
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void setSecondFragment(Fragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_frame, fragment);
         ft.addToBackStack(null);
         ft.commit();
     }

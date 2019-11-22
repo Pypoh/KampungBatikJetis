@@ -2,23 +2,26 @@ package com.example.kampungbatikjetis.Model;
 
 public class EventModel {
 
-    private int imageID;
+    private String imageID;
     private String eventTitle;
     private String eventDate;
     private String eventDescription;
 
-    public EventModel(int imageID, String eventTitle, String eventDate, String eventDescription) {
+    public EventModel() {
+    }
+
+    public EventModel(String imageID, String eventTitle, String eventDate, String eventDescription) {
         this.imageID = imageID;
         this.eventTitle = eventTitle;
         this.eventDate = eventDate;
         this.eventDescription = eventDescription;
     }
 
-    public int getImageID() {
+    public String getImageID() {
         return imageID;
     }
 
-    public void setImageID(int imageID) {
+    public void setImageID(String imageID) {
         this.imageID = imageID;
     }
 
